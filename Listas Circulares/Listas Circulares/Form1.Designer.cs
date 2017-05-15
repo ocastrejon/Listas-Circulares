@@ -41,13 +41,14 @@
             this.txtBxBaseInicio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBxRecorrido = new System.Windows.Forms.TextBox();
             this.bttnBuscar = new System.Windows.Forms.Button();
             this.bttnEliminar = new System.Windows.Forms.Button();
             this.bttnAgregarInicio = new System.Windows.Forms.Button();
             this.bttnEliminarUltimo = new System.Windows.Forms.Button();
             this.bttnEliminarPrimero = new System.Windows.Forms.Button();
             this.bttnInsertarDespuesDe = new System.Windows.Forms.Button();
+            this.bttnReporte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +79,7 @@
             this.bttnAgregarBase.TabIndex = 2;
             this.bttnAgregarBase.Text = "Agregar Base";
             this.bttnAgregarBase.UseVisualStyleBackColor = true;
+            this.bttnAgregarBase.Click += new System.EventHandler(this.bttnAgregarBase_Click);
             // 
             // txtBxMinutosBase
             // 
@@ -100,7 +102,7 @@
             // txtBxHoraFinRuta
             // 
             this.txtBxHoraFinRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxHoraFinRuta.Location = new System.Drawing.Point(30, 350);
+            this.txtBxHoraFinRuta.Location = new System.Drawing.Point(32, 403);
             this.txtBxHoraFinRuta.Name = "txtBxHoraFinRuta";
             this.txtBxHoraFinRuta.Size = new System.Drawing.Size(100, 34);
             this.txtBxHoraFinRuta.TabIndex = 8;
@@ -109,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 320);
+            this.label3.Location = new System.Drawing.Point(29, 373);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 29);
             this.label3.TabIndex = 7;
@@ -118,7 +120,7 @@
             // txtBxHoraInicioRuta
             // 
             this.txtBxHoraInicioRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxHoraInicioRuta.Location = new System.Drawing.Point(30, 278);
+            this.txtBxHoraInicioRuta.Location = new System.Drawing.Point(32, 331);
             this.txtBxHoraInicioRuta.Name = "txtBxHoraInicioRuta";
             this.txtBxHoraInicioRuta.Size = new System.Drawing.Size(100, 34);
             this.txtBxHoraInicioRuta.TabIndex = 6;
@@ -127,7 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 248);
+            this.label4.Location = new System.Drawing.Point(29, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 29);
             this.label4.TabIndex = 5;
@@ -137,7 +139,7 @@
             // 
             this.bttnCalcularRuta.AutoSize = true;
             this.bttnCalcularRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnCalcularRuta.Location = new System.Drawing.Point(30, 474);
+            this.bttnCalcularRuta.Location = new System.Drawing.Point(30, 521);
             this.bttnCalcularRuta.Name = "bttnCalcularRuta";
             this.bttnCalcularRuta.Size = new System.Drawing.Size(170, 39);
             this.bttnCalcularRuta.TabIndex = 9;
@@ -147,7 +149,7 @@
             // txtBxBaseInicio
             // 
             this.txtBxBaseInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxBaseInicio.Location = new System.Drawing.Point(30, 423);
+            this.txtBxBaseInicio.Location = new System.Drawing.Point(32, 476);
             this.txtBxBaseInicio.Name = "txtBxBaseInicio";
             this.txtBxBaseInicio.Size = new System.Drawing.Size(100, 34);
             this.txtBxBaseInicio.TabIndex = 11;
@@ -156,7 +158,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 393);
+            this.label5.Location = new System.Drawing.Point(29, 446);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 29);
             this.label5.TabIndex = 10;
@@ -172,14 +174,14 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Recorrido";
             // 
-            // textBox1
+            // txtBxRecorrido
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(255, 58);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 219);
-            this.textBox1.TabIndex = 13;
+            this.txtBxRecorrido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxRecorrido.Location = new System.Drawing.Point(255, 58);
+            this.txtBxRecorrido.Multiline = true;
+            this.txtBxRecorrido.Name = "txtBxRecorrido";
+            this.txtBxRecorrido.Size = new System.Drawing.Size(303, 219);
+            this.txtBxRecorrido.TabIndex = 13;
             // 
             // bttnBuscar
             // 
@@ -191,6 +193,7 @@
             this.bttnBuscar.TabIndex = 14;
             this.bttnBuscar.Text = "Buscar";
             this.bttnBuscar.UseVisualStyleBackColor = true;
+            this.bttnBuscar.Click += new System.EventHandler(this.bttnBuscar_Click);
             // 
             // bttnEliminar
             // 
@@ -202,6 +205,7 @@
             this.bttnEliminar.TabIndex = 15;
             this.bttnEliminar.Text = "Eliminar";
             this.bttnEliminar.UseVisualStyleBackColor = true;
+            this.bttnEliminar.Click += new System.EventHandler(this.bttnEliminar_Click);
             // 
             // bttnAgregarInicio
             // 
@@ -213,6 +217,7 @@
             this.bttnAgregarInicio.TabIndex = 16;
             this.bttnAgregarInicio.Text = "Agregar en Inicio";
             this.bttnAgregarInicio.UseVisualStyleBackColor = true;
+            this.bttnAgregarInicio.Click += new System.EventHandler(this.bttnAgregarInicio_Click);
             // 
             // bttnEliminarUltimo
             // 
@@ -224,6 +229,7 @@
             this.bttnEliminarUltimo.TabIndex = 17;
             this.bttnEliminarUltimo.Text = "Eliminar Ultimo";
             this.bttnEliminarUltimo.UseVisualStyleBackColor = true;
+            this.bttnEliminarUltimo.Click += new System.EventHandler(this.bttnEliminarUltimo_Click);
             // 
             // bttnEliminarPrimero
             // 
@@ -235,30 +241,45 @@
             this.bttnEliminarPrimero.TabIndex = 18;
             this.bttnEliminarPrimero.Text = "Eliminar Primero";
             this.bttnEliminarPrimero.UseVisualStyleBackColor = true;
+            this.bttnEliminarPrimero.Click += new System.EventHandler(this.bttnEliminarPrimero_Click);
             // 
             // bttnInsertarDespuesDe
             // 
             this.bttnInsertarDespuesDe.AutoSize = true;
             this.bttnInsertarDespuesDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnInsertarDespuesDe.Location = new System.Drawing.Point(257, 521);
+            this.bttnInsertarDespuesDe.Location = new System.Drawing.Point(255, 521);
             this.bttnInsertarDespuesDe.Name = "bttnInsertarDespuesDe";
             this.bttnInsertarDespuesDe.Size = new System.Drawing.Size(245, 39);
             this.bttnInsertarDespuesDe.TabIndex = 19;
             this.bttnInsertarDespuesDe.Text = "Insertar Despues de";
             this.bttnInsertarDespuesDe.UseVisualStyleBackColor = true;
+            this.bttnInsertarDespuesDe.Click += new System.EventHandler(this.bttnInsertarDespuesDe_Click);
+            // 
+            // bttnReporte
+            // 
+            this.bttnReporte.AutoSize = true;
+            this.bttnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnReporte.Location = new System.Drawing.Point(30, 229);
+            this.bttnReporte.Name = "bttnReporte";
+            this.bttnReporte.Size = new System.Drawing.Size(170, 39);
+            this.bttnReporte.TabIndex = 20;
+            this.bttnReporte.Text = "Reporte";
+            this.bttnReporte.UseVisualStyleBackColor = true;
+            this.bttnReporte.Click += new System.EventHandler(this.bttnReporte_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 639);
+            this.ClientSize = new System.Drawing.Size(592, 593);
+            this.Controls.Add(this.bttnReporte);
             this.Controls.Add(this.bttnInsertarDespuesDe);
             this.Controls.Add(this.bttnEliminarPrimero);
             this.Controls.Add(this.bttnEliminarUltimo);
             this.Controls.Add(this.bttnAgregarInicio);
             this.Controls.Add(this.bttnEliminar);
             this.Controls.Add(this.bttnBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBxRecorrido);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBxBaseInicio);
             this.Controls.Add(this.label5);
@@ -274,6 +295,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Ruta";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,13 +316,14 @@
         private System.Windows.Forms.TextBox txtBxBaseInicio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBxRecorrido;
         private System.Windows.Forms.Button bttnBuscar;
         private System.Windows.Forms.Button bttnEliminar;
         private System.Windows.Forms.Button bttnAgregarInicio;
         private System.Windows.Forms.Button bttnEliminarUltimo;
         private System.Windows.Forms.Button bttnEliminarPrimero;
         private System.Windows.Forms.Button bttnInsertarDespuesDe;
+        private System.Windows.Forms.Button bttnReporte;
     }
 }
 

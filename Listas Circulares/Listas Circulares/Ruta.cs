@@ -7,41 +7,110 @@ using System.Threading.Tasks;
 namespace Listas_Circulares
 {
     class Ruta
-    {
-        public void Agregar(Base b)
-        {
+    {//DateTime
+        public Base inicio { get; set; }
+        public Base ultimo { get; set; }
+        //DateTime tiempo = new DateTime();
 
+        public void Agregar(Base nuevo)
+        {
+            if (inicio == null)
+            {
+                inicio = nuevo;
+                ultimo = inicio;
+            }
+            else
+            {
+                ultimo.siguiente = nuevo;
+                nuevo.anterior = ultimo;
+                ultimo = nuevo;
+               // ultimo.siguiente = inicio;
+            }
+            
         }
 
-        public void Buscar(string nombre)
+        public Base Buscar(string nombre)
         {
+            Base x = null;
+            Base b = inicio;
 
+            while (b != null)
+            {
+                if (b.Nombre == nombre)
+                {
+                    x = b;
+                    break;
+                }
+                else
+                    b = b.siguiente;
+            }
+            return x;
         }
 
         public string Reporte()
         {
-
-            return;
+            string datos = "";
+            Base b = inicio;
+            while (b != null)
+            {
+                datos += b.ToString();
+                b = b.siguiente;
+            }
+            return datos;
         }
 
         public void Eliminar(string nombre)
         {
-
+            if (inicio != null)
+            {
+                Base b = inicio;
+                if (inicio.Nombre == nombre)
+                    inicio = inicio.siguiente;
+                else
+                    while (b != null)
+                    { 
+                        if (b.siguiente.Nombre == nombre)
+                        {
+                            b.siguiente = b.siguiente.siguiente;
+                            break;
+                        }
+                        else
+                            b = b.siguiente;
+                    }
+            }
         }
 
-        public void AgregarInicio(Base b)
+        public void AgregarInicio(Base nuevo)
         {
-
+            if (inicio == null)
+            {
+                inicio = nuevo;
+                ultimo = inicio;
+            }
+            else
+            {
+                nuevo.siguiente = inicio;
+                inicio = nuevo;
+                inicio.anterior = null;
+            }
         }
 
         public void EliminarUltimo()
         {
-
+            if (inicio != null)
+            {
+                ultimo = ultimo.anterior;
+                ultimo.siguiente = null;
+            }
         }
 
         public void EliminarPrimero()
         {
-
+            if (inicio != null)
+            {
+                inicio = inicio.siguiente;
+                inicio.anterior = null;
+            }
         }
 
         public void InsertarDespuesDe(string nombre, Base b)
@@ -49,10 +118,10 @@ namespace Listas_Circulares
 
         }
 
-        public string Recorrido(string nombre, int horaInicio, int horaFin)
-        {
+        //public string Recorrido(string nombre, int horaInicio, int horaFin)
+        //{
 
-            return;
-        }
+        //    return;
+        //}
     }
 }
