@@ -165,7 +165,8 @@
             this.txtBxRecorrido.Location = new System.Drawing.Point(255, 58);
             this.txtBxRecorrido.Multiline = true;
             this.txtBxRecorrido.Name = "txtBxRecorrido";
-            this.txtBxRecorrido.Size = new System.Drawing.Size(303, 219);
+            this.txtBxRecorrido.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxRecorrido.Size = new System.Drawing.Size(245, 219);
             this.txtBxRecorrido.TabIndex = 13;
             // 
             // bttnBuscar
@@ -277,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 632);
+            this.ClientSize = new System.Drawing.Size(529, 593);
             this.Controls.Add(this.dateTimePickerFinal);
             this.Controls.Add(this.dateTimePickerInicio);
             this.Controls.Add(this.bttnReporte);

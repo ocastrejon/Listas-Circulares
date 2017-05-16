@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 namespace Listas_Circulares
 {
     class Ruta
-    {//DateTime
+    {
         public Base inicio { get; set; }
         public Base ultimo { get; set; }
-        DateTime tiempo = new DateTime();
-
 
         public void Agregar(Base nuevo)
         {
@@ -25,6 +23,7 @@ namespace Listas_Circulares
                 ultimo.siguiente = nuevo;
                 nuevo.anterior = ultimo;
                 ultimo = nuevo;
+                ultimo.siguiente = inicio;
             }
             
         }
@@ -50,8 +49,9 @@ namespace Listas_Circulares
         public string Reporte()
         {
             string datos = "";
-            Base b = inicio;
-            while (b != null)
+            Base b = inicio.siguiente;
+            datos += inicio;
+            while (b != inicio)
             {
                 datos += b.ToString();
                 b = b.siguiente;
@@ -118,17 +118,27 @@ namespace Listas_Circulares
 
         }
 
-        public string Recorrido(string nombre, DateTime x, DateTime y)
+        public string Recorrido(string nombre, DateTime inicioH, DateTime finalH)
         {
             string datos = "";
-            Base b = inicio;
-            while (b != null)
+            string x = "Error";
+            Base b = inicio.siguiente;
+
+            while(b != inicio)
             {
-                x.AddMinutes(b.Minutos);
-                datos += b + x.ToString();
+                if (nombre == b.Nombre)
+                {
+                    while (inicioH < finalH)
+                    {
+                        inicioH = inicioH.AddMinutes(b.Minutos);
+                        datos += b + inicioH.ToShortTimeString() + Environment.NewLine.ToString();
+                        b = b.siguiente;
+                    }
+                    return datos;
+                }
                 b = b.siguiente;
             }
-            return datos;
+            return x;
         }
     }
 }

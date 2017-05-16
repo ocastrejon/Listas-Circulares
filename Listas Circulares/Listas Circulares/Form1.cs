@@ -135,6 +135,9 @@ namespace Listas_Circulares
 
         private void bttnCalcularRuta_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtBxBaseInicio.Text))
+                MessageBox.Show("ingresar base de inicio");
+            else
             txtBxRecorrido.Text = r.Recorrido(txtBxBaseInicio.Text, dateTimePickerInicio.Value, dateTimePickerFinal.Value);
         }
 
