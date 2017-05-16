@@ -33,9 +33,7 @@
             this.bttnAgregarBase = new System.Windows.Forms.Button();
             this.txtBxMinutosBase = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBxHoraFinRuta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBxHoraInicioRuta = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.bttnCalcularRuta = new System.Windows.Forms.Button();
             this.txtBxBaseInicio = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@
             this.bttnEliminarPrimero = new System.Windows.Forms.Button();
             this.bttnInsertarDespuesDe = new System.Windows.Forms.Button();
             this.bttnReporte = new System.Windows.Forms.Button();
+            this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -99,14 +99,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Minutos";
             // 
-            // txtBxHoraFinRuta
-            // 
-            this.txtBxHoraFinRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxHoraFinRuta.Location = new System.Drawing.Point(32, 403);
-            this.txtBxHoraFinRuta.Name = "txtBxHoraFinRuta";
-            this.txtBxHoraFinRuta.Size = new System.Drawing.Size(100, 34);
-            this.txtBxHoraFinRuta.TabIndex = 8;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -116,14 +108,6 @@
             this.label3.Size = new System.Drawing.Size(139, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Hora de Fin";
-            // 
-            // txtBxHoraInicioRuta
-            // 
-            this.txtBxHoraInicioRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxHoraInicioRuta.Location = new System.Drawing.Point(32, 331);
-            this.txtBxHoraInicioRuta.Name = "txtBxHoraInicioRuta";
-            this.txtBxHoraInicioRuta.Size = new System.Drawing.Size(100, 34);
-            this.txtBxHoraInicioRuta.TabIndex = 6;
             // 
             // label4
             // 
@@ -145,6 +129,7 @@
             this.bttnCalcularRuta.TabIndex = 9;
             this.bttnCalcularRuta.Text = "Recorrido";
             this.bttnCalcularRuta.UseVisualStyleBackColor = true;
+            this.bttnCalcularRuta.Click += new System.EventHandler(this.bttnCalcularRuta_Click);
             // 
             // txtBxBaseInicio
             // 
@@ -267,11 +252,34 @@
             this.bttnReporte.UseVisualStyleBackColor = true;
             this.bttnReporte.Click += new System.EventHandler(this.bttnReporte_Click);
             // 
+            // dateTimePickerInicio
+            // 
+            this.dateTimePickerInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerInicio.Location = new System.Drawing.Point(30, 336);
+            this.dateTimePickerInicio.Name = "dateTimePickerInicio";
+            this.dateTimePickerInicio.ShowUpDown = true;
+            this.dateTimePickerInicio.Size = new System.Drawing.Size(170, 34);
+            this.dateTimePickerInicio.TabIndex = 21;
+            this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dateTimePickerFinal
+            // 
+            this.dateTimePickerFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerFinal.Location = new System.Drawing.Point(30, 409);
+            this.dateTimePickerFinal.Name = "dateTimePickerFinal";
+            this.dateTimePickerFinal.ShowUpDown = true;
+            this.dateTimePickerFinal.Size = new System.Drawing.Size(170, 34);
+            this.dateTimePickerFinal.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 593);
+            this.ClientSize = new System.Drawing.Size(592, 632);
+            this.Controls.Add(this.dateTimePickerFinal);
+            this.Controls.Add(this.dateTimePickerInicio);
             this.Controls.Add(this.bttnReporte);
             this.Controls.Add(this.bttnInsertarDespuesDe);
             this.Controls.Add(this.bttnEliminarPrimero);
@@ -284,9 +292,7 @@
             this.Controls.Add(this.txtBxBaseInicio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.bttnCalcularRuta);
-            this.Controls.Add(this.txtBxHoraFinRuta);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtBxHoraInicioRuta);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBxMinutosBase);
             this.Controls.Add(this.label2);
@@ -308,9 +314,7 @@
         private System.Windows.Forms.Button bttnAgregarBase;
         private System.Windows.Forms.TextBox txtBxMinutosBase;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBxHoraFinRuta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBxHoraInicioRuta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bttnCalcularRuta;
         private System.Windows.Forms.TextBox txtBxBaseInicio;
@@ -324,6 +328,8 @@
         private System.Windows.Forms.Button bttnEliminarPrimero;
         private System.Windows.Forms.Button bttnInsertarDespuesDe;
         private System.Windows.Forms.Button bttnReporte;
+        private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFinal;
     }
 }
 

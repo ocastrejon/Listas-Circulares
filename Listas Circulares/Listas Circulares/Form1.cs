@@ -118,6 +118,28 @@ namespace Listas_Circulares
 
         private void bttnInsertarDespuesDe_Click(object sender, EventArgs e)
         {
+            //if (string.IsNullOrEmpty(txtBxNombreBase.Text) || string.IsNullOrEmpty(txtBxMinutosBase.Text))
+            //    MessageBox.Show("Faltan datos por agregar");
+            //else
+            //{
+            //    Base b = new Base();
+            //    b.Nombre = txtBxNombreBase.Text;
+            //    b.Minutos = Convert.ToInt32(txtBxMinutosBase.Text);
+
+            //    r.InsertarDespuesDe(,b);
+
+            //    txtBxMinutosBase.Clear();
+            //    txtBxNombreBase.Clear();
+            //}
+        }
+
+        private void bttnCalcularRuta_Click(object sender, EventArgs e)
+        {
+            txtBxRecorrido.Text = r.Recorrido(txtBxBaseInicio.Text, dateTimePickerInicio.Value, dateTimePickerFinal.Value);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

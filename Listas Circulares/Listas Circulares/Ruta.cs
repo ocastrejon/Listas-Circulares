@@ -10,7 +10,8 @@ namespace Listas_Circulares
     {//DateTime
         public Base inicio { get; set; }
         public Base ultimo { get; set; }
-        //DateTime tiempo = new DateTime();
+        DateTime tiempo = new DateTime();
+
 
         public void Agregar(Base nuevo)
         {
@@ -24,7 +25,6 @@ namespace Listas_Circulares
                 ultimo.siguiente = nuevo;
                 nuevo.anterior = ultimo;
                 ultimo = nuevo;
-               // ultimo.siguiente = inicio;
             }
             
         }
@@ -118,10 +118,17 @@ namespace Listas_Circulares
 
         }
 
-        //public string Recorrido(string nombre, int horaInicio, int horaFin)
-        //{
-
-        //    return;
-        //}
+        public string Recorrido(string nombre, DateTime x, DateTime y)
+        {
+            string datos = "";
+            Base b = inicio;
+            while (b != null)
+            {
+                x.AddMinutes(b.Minutos);
+                datos += b + x.ToString();
+                b = b.siguiente;
+            }
+            return datos;
+        }
     }
 }
