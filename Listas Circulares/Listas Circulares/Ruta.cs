@@ -10,6 +10,8 @@ namespace Listas_Circulares
     {
         public Base inicio { get; set; }
         public Base ultimo { get; set; }
+        private int aux = 0;
+        private int a = 1;
 
         public void Agregar(Base nuevo)
         {
@@ -17,6 +19,7 @@ namespace Listas_Circulares
             {
                 inicio = nuevo;
                 ultimo = inicio;
+                aux++;
             }
             else
             {
@@ -24,6 +27,7 @@ namespace Listas_Circulares
                 nuevo.anterior = ultimo;
                 ultimo = nuevo;
                 ultimo.siguiente = inicio;
+                aux++;
             }
             
         }
@@ -32,8 +36,9 @@ namespace Listas_Circulares
         {
             Base x = null;
             Base b = inicio;
+            a = 1;
 
-            while (b != ultimo)
+            while (a <= aux)
             {
                 if (b.Nombre == nombre)
                 {
@@ -42,6 +47,7 @@ namespace Listas_Circulares
                 }
                 else
                     b = b.siguiente;
+                a++;
             }
             return x;
         }
@@ -49,33 +55,42 @@ namespace Listas_Circulares
         public string Reporte()
         {
             string datos = "";
-            Base b = inicio.siguiente;
-            datos += inicio;
-            while (b != inicio)
+            Base b = inicio;
+            a = 1;
+
+            while (a <= aux)
             {
-                datos += Environment.NewLine + b.ToString();
+                datos += b + Environment.NewLine.ToString();
                 b = b.siguiente;
+                a++;
             }
             return datos;
         }
 
         public void Eliminar(string nombre)
         {
+            a = 1; 
+
             if (inicio != null)
             {
                 Base b = inicio;
                 if (inicio.Nombre == nombre)
+                {
                     inicio = inicio.siguiente;
+                    aux--;
+                }
                 else
-                    while (b != ultimo)
+                    while (a <= aux)
                     { 
                         if (b.siguiente.Nombre == nombre)
                         {
                             b.siguiente = b.siguiente.siguiente;
+                            aux--;
                             break;
                         }
                         else
                             b = b.siguiente;
+                        a++;
                     }
             }
         }
@@ -86,12 +101,14 @@ namespace Listas_Circulares
             {
                 inicio = nuevo;
                 ultimo = inicio;
+                aux++;
             }
             else
             {
                 nuevo.siguiente = inicio;
                 inicio = nuevo;
                 inicio.anterior = null;
+                aux++;
             }
         }
 
@@ -101,6 +118,7 @@ namespace Listas_Circulares
             {
                 ultimo = ultimo.anterior;
                 ultimo.siguiente = null;
+                aux--;
             }
         }
 
@@ -110,23 +128,27 @@ namespace Listas_Circulares
             {
                 inicio = inicio.siguiente;
                 inicio.anterior = null;
+                aux--;
             }
         }
 
         public void InsertarDespuesDe(string nombre, Base nuevo)
         {
             Base b = inicio;
+            a = 1;
 
-            while (b != ultimo)
+            while (a <= aux)
             {
                 if (b.siguiente.Nombre == nombre)
                 {
                     nuevo.siguiente = b.siguiente.siguiente;
                     b.siguiente.siguiente = nuevo;
+                    aux++;
                     break;
                 }
                 else
                     b = b.siguiente;
+                a++;
             }
         }
 
@@ -135,8 +157,9 @@ namespace Listas_Circulares
             string datos = "";
             string x = "Error";
             Base b = inicio;
+            a = 1;
 
-            while(b != ultimo)
+            while(a <= aux)
             {
                 if (nombre == b.Nombre)
                 {
@@ -152,6 +175,7 @@ namespace Listas_Circulares
                     return datos;
                 }
                 b = b.siguiente;
+                a++;
             }
             return x;
         }
