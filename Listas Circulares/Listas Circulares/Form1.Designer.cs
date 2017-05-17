@@ -49,6 +49,8 @@
             this.bttnReporte = new System.Windows.Forms.Button();
             this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
+            this.txtBxInsertar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -233,7 +235,7 @@
             // 
             this.bttnInsertarDespuesDe.AutoSize = true;
             this.bttnInsertarDespuesDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnInsertarDespuesDe.Location = new System.Drawing.Point(255, 521);
+            this.bttnInsertarDespuesDe.Location = new System.Drawing.Point(255, 534);
             this.bttnInsertarDespuesDe.Name = "bttnInsertarDespuesDe";
             this.bttnInsertarDespuesDe.Size = new System.Drawing.Size(245, 39);
             this.bttnInsertarDespuesDe.TabIndex = 19;
@@ -274,11 +276,31 @@
             this.dateTimePickerFinal.Size = new System.Drawing.Size(170, 34);
             this.dateTimePickerFinal.TabIndex = 22;
             // 
+            // txtBxInsertar
+            // 
+            this.txtBxInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxInsertar.Location = new System.Drawing.Point(375, 579);
+            this.txtBxInsertar.Name = "txtBxInsertar";
+            this.txtBxInsertar.Size = new System.Drawing.Size(100, 34);
+            this.txtBxInsertar.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(259, 582);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 29);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Nombre";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 593);
+            this.ClientSize = new System.Drawing.Size(529, 635);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtBxInsertar);
             this.Controls.Add(this.dateTimePickerFinal);
             this.Controls.Add(this.dateTimePickerInicio);
             this.Controls.Add(this.bttnReporte);
@@ -331,6 +353,8 @@
         private System.Windows.Forms.Button bttnReporte;
         private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
         private System.Windows.Forms.DateTimePicker dateTimePickerFinal;
+        private System.Windows.Forms.TextBox txtBxInsertar;
+        private System.Windows.Forms.Label label7;
     }
 }
 

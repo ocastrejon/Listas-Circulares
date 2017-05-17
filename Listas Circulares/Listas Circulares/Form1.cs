@@ -118,19 +118,20 @@ namespace Listas_Circulares
 
         private void bttnInsertarDespuesDe_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(txtBxNombreBase.Text) || string.IsNullOrEmpty(txtBxMinutosBase.Text))
-            //    MessageBox.Show("Faltan datos por agregar");
-            //else
-            //{
-            //    Base b = new Base();
-            //    b.Nombre = txtBxNombreBase.Text;
-            //    b.Minutos = Convert.ToInt32(txtBxMinutosBase.Text);
+            if (string.IsNullOrEmpty(txtBxNombreBase.Text) || string.IsNullOrEmpty(txtBxInsertar.Text) || string.IsNullOrEmpty(txtBxMinutosBase.Text))
+                MessageBox.Show("Faltan datos por agregar");
+            else
+            {
+                Base b = new Base();
+                b.Nombre = txtBxNombreBase.Text;
+                b.Minutos = Convert.ToInt32(txtBxMinutosBase.Text);
 
-            //    r.InsertarDespuesDe(,b);
+                r.InsertarDespuesDe(txtBxInsertar.Text, b);
 
-            //    txtBxMinutosBase.Clear();
-            //    txtBxNombreBase.Clear();
-            //}
+                txtBxMinutosBase.Clear();
+                txtBxNombreBase.Clear();
+                txtBxInsertar.Clear();
+            }
         }
 
         private void bttnCalcularRuta_Click(object sender, EventArgs e)

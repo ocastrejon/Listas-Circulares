@@ -33,7 +33,7 @@ namespace Listas_Circulares
             Base x = null;
             Base b = inicio;
 
-            while (b != null)
+            while (b != ultimo)
             {
                 if (b.Nombre == nombre)
                 {
@@ -53,7 +53,7 @@ namespace Listas_Circulares
             datos += inicio;
             while (b != inicio)
             {
-                datos += b.ToString();
+                datos += Environment.NewLine + b.ToString();
                 b = b.siguiente;
             }
             return datos;
@@ -67,7 +67,7 @@ namespace Listas_Circulares
                 if (inicio.Nombre == nombre)
                     inicio = inicio.siguiente;
                 else
-                    while (b != null)
+                    while (b != ultimo)
                     { 
                         if (b.siguiente.Nombre == nombre)
                         {
@@ -113,26 +113,41 @@ namespace Listas_Circulares
             }
         }
 
-        public void InsertarDespuesDe(string nombre, Base b)
+        public void InsertarDespuesDe(string nombre, Base nuevo)
         {
+            Base b = inicio;
 
+            while (b != ultimo)
+            {
+                if (b.siguiente.Nombre == nombre)
+                {
+                    nuevo.siguiente = b.siguiente.siguiente;
+                    b.siguiente.siguiente = nuevo;
+                    break;
+                }
+                else
+                    b = b.siguiente;
+            }
         }
 
         public string Recorrido(string nombre, DateTime inicioH, DateTime finalH)
         {
             string datos = "";
             string x = "Error";
-            Base b = inicio.siguiente;
+            Base b = inicio;
 
-            while(b != inicio)
+            while(b != ultimo)
             {
                 if (nombre == b.Nombre)
                 {
                     while (inicioH < finalH)
                     {
                         inicioH = inicioH.AddMinutes(b.Minutos);
-                        datos += b + inicioH.ToShortTimeString() + Environment.NewLine.ToString();
-                        b = b.siguiente;
+                        if (inicioH <= finalH)
+                        {
+                            datos += b + inicioH.ToShortTimeString() + Environment.NewLine.ToString();
+                            b = b.siguiente;
+                        }
                     }
                     return datos;
                 }
